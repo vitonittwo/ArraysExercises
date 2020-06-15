@@ -41,7 +41,7 @@ public class Main {
         int indMax = 0;
         int max = oddNumberArray[0];
 
-        for (int k = 0; k < size; k++) {
+        for (int k = 1; k < size; k++) {
 
             if (oddNumberArray[k] > max)  {
                 max = oddNumberArray[k];
@@ -55,14 +55,14 @@ public class Main {
         int indMin = 0;
         int min = oddNumberArray[0];
 
-        for (int k = 0; k < size; k++) {
+        for (int k = 1; k < size; k++) {
             if (oddNumberArray[k] < min) {
                 min = oddNumberArray[k];
                 indMin = k;
             }
         }
-            System.out.println("The smallest elements is - " + min);
-            System.out.println(indMin);
+        System.out.println("The smallest elements is - " + min);
+        System.out.println(indMin);
 
             // swap the largest element with the smallest
         oddNumberArray[indMin] = max;

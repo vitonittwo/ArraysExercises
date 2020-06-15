@@ -9,16 +9,15 @@ public class PerBor_Mas {
         System.out.println("Enter the length of the one-dimensional array!");
         int n = enter.nextInt();
 
-        int[] A = new int[n];
+       // int[] A = new int[n];
         System.out.println("Enter the first element array!");
         int k = enter.nextInt();
 
         System.out.println("Entered array.");
 
         for (int i = 0; i < n; i++) {
-            System.out.print(A[i] + k + "\t");
+            System.out.print(k + "\t");
             k++;
         }
-       // System.out.println("");
     }
 }
