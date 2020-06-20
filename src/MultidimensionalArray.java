@@ -21,54 +21,32 @@ public class MultidimensionalArray {
 
         // two matrices creating
 
-        int i;
-        int j;
-
-        // int[][] firstMatrix = new int[rowsNumberFirstM][columnsNumberFirstM];
-
         System.out.print("First matrix");
 
-        int[][] firstMatrix = createMatrixAndFillWithRandom(rowsNumberFirstM, columnsNumberFirstM);
+        int[][] firstMatrix = MultidimensionalArray.createMatrixAndFillWithRandom(rowsNumberFirstM, columnsNumberFirstM);
 
-        // for (i = 0; i < rowsNumberFirstM; i++) {
-        //   System.out.print("\n");
-        //    for (j = 0; j < columnsNumberFirstM; j++) {
-
-        //     firstMatrix[i][j] = (int) (Math.random() * 100);
-        // System.out.print(firstMatrix[i][j] + "\t");
-        //   }
-        // }
-
-        System.out.print("\n" + "\n");
-
-        // int[][] secondMatrix = new int[rowsNumberSecondM][columnsNumberSecondM];
+        System.out.print("\n\n");
 
         System.out.print("Second matrix");
 
         int[][] secondMatrix = createMatrixAndFillWithRandom(rowsNumberSecondM, columnsNumberSecondM);
 
-        //  for (i = 0; i < rowsNumberSecondM; i++) {
-        //   System.out.print("\n");
-        //  for (j = 0; j < columnsNumberSecondM; j++) {
+        // Multiply two matrices
 
-        //   secondMatrix[i][j] = (int) (Math.random() * 100);
-        // System.out.print(secondMatrix[i][j] + "\t");
-        //   }
-        //  }
-// Multiply two matrices
-        int k;
         int nextAmount = 0;
         int[][] multiplyTwoM = new int[rowsNumberFirstM][columnsNumberSecondM];
-
+        int i;
+        int j;
         for (i = 0; i < rowsNumberFirstM; i++) {
             for (j = 0; j < columnsNumberSecondM; j++) {
-                for (k = 0; k < columnsNumberFirstM; k++) {
+                for (int k = 0; k < columnsNumberFirstM; k++) {
                     nextAmount = nextAmount + firstMatrix[i][k] * secondMatrix[k][j];
                 }
                 multiplyTwoM[i][j] = nextAmount;
                 nextAmount = 0;
             }
         }
+
         System.out.print("\n\n");
         System.out.print("Matrix multiplication result");
         for (i = 0; i < rowsNumberFirstM; i++) {
@@ -81,19 +59,16 @@ public class MultidimensionalArray {
 
     private static int[][] createMatrixAndFillWithRandom(int numRows, int numColumns) {
 
-        int i;
-        int j;
-        for (i = 0; i < numRows; i++) {
-            System.out.print("\n");
-            for (j = 0; j < numColumns; j++) {
+        int[][] matrix = new int[numRows][numColumns];
 
-                int[][] matrix = new int[numRows][numColumns];
+        for (int i = 0; i < numRows; i++) {
+            System.out.print("\n");
+            for (int j = 0; j < numColumns; j++) {
+
                 matrix[i][j] = (int) (Math.random() * 100);
                 System.out.print(matrix[i][j] + "\t");
             }
         }
-
-        return new int[0][];
+      return matrix;
     }
-
 }
